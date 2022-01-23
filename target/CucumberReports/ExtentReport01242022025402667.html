@@ -1,0 +1,1459 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/bee7a4abdc590e21eec8618a90c81ff4d16e500a/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>API Automation Report</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Get Promotion Details - API Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Jan 24, 2022 02:54:02 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.7</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='88.889%'><span class='strong'>8</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='11.111%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='52.747%'><span class='strong'>96</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='2.198%'>4</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='45.055%'>82</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_001 - With Valid API Key</span>
+						<span class='test-time'>Jan 24, 2022 02:54:03 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:03 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:08 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+316ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:03 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/promotions?apikey=webB2BGDMSTGExy0sVDlZMzNDdUyZ</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:07 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: GET</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:07 AM</td>
+					<td class='step-details'>Expected Status Code: 200 ||   Actual Status Code from API Call: 200</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:07 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromotionID from Response: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>Promotion ID is populated successfully in Response with valid String format</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID from Response: 32 for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea from Response: [home:main] for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType from Response: VOD</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowPrice from Response: false for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showPrice is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowText from Response: false for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showText is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value under localizedTexts JSONObject: [Sabe movie,  ,  ] for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value is populated successfully under localizedTexts JSONObject for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value under localizedTexts JSONObject: [Sabe movie,  ,  ] for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value is populated successfully under localizedTexts JSONObject for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType from Response: movie for Promotion.ID: sabe movie for b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType value is populated correctly under Properties JSONObject</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromotionID from Response: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>Promotion ID is populated successfully in Response with valid String format</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID from Response: 50 for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea from Response: [home:main] for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType from Response: REWIND</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowPrice from Response: true for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showPrice is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowText from Response: true for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showText is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value under localizedTexts JSONObject: [Bharti Rewind b2b2c,  ] for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value under localizedTexts JSONObject: [Bharti Rewind b2b2c,  ] for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType from Response: null for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType value is populated as NULL under Properties JSONObject for Promotion.ID: Bharti Rewind b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromotionID from Response: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>Promotion ID is populated successfully in Response with valid String format</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID from Response: 52 for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea from Response: [home:main] for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType from Response: SUBSCRIPTION</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowPrice from Response: true for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showPrice is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowText from Response: true for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showText is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value under localizedTexts JSONObject: [Bharti subscription b2b2c,  ] for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value under localizedTexts JSONObject: [Bharti subscription b2b2c,  ] for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType from Response: null for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType value is populated as NULL under Properties JSONObject for Promotion.ID: Bharti subscription b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromotionID from Response: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>Promotion ID is populated successfully in Response with valid String format</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID from Response: 53 for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea from Response: [home:main] for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType from Response: CHANNEL</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowPrice from Response: true for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showPrice is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowText from Response: true for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showText is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value under localizedTexts JSONObject: [Bharti Arabic b2b,  ,  ] for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value under localizedTexts JSONObject: [Bharti Arabic b2b2c,  ] for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType from Response: null for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType value is populated as NULL under Properties JSONObject for Promotion.ID: Bharti channel b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromotionID from Response: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>Promotion ID is populated successfully in Response with valid String format</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID from Response: 54 for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea from Response: [home:main] for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType from Response: EPISODE</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowPrice from Response: true for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showPrice is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowText from Response: true for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showText is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value under localizedTexts JSONObject: [Bharti Episode b2b2c,  ] for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value under localizedTexts JSONObject: [Bharti Episode b2b2c,  ] for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType from Response: episode for Promotion.ID: Bharti Episode b2b2c</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType value is populated correctly under Properties JSONObject</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromotionID from Response: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>Promotion ID is populated successfully in Response with valid String format</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID from Response: 55 for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>OrderID is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea from Response: [home:main] for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoArea is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType from Response: SEASON</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>PromoType is Populated Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowPrice from Response: true for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showPrice is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ShowText from Response: true for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>showText is Populated with Boolean Format Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value under localizedTexts JSONObject: [Bharti season b2b,  ,  ] for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>AR Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value under localizedTexts JSONObject: [Bharti season b2b,  ,  ] for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>EN Value is populated successfully under localizedTexts JSONObject for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType from Response: null for Promotion.ID: Bharti season b2b</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>ProgramType value is populated as NULL under Properties JSONObject for Promotion.ID: Bharti season b2b</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_002 - With Invalid API Key</span>
+						<span class='test-time'>Jan 24, 2022 02:54:08 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:08 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:09 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+718ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/promotions?apikey=webB2BGDMSTG</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: GET</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>Expected Status Code: 403 ||   Actual Status Code from API Call: 403</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:08 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Expected Response Message: invalid api key ||   Actual Response Message: invalid api key</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Response Message matched with expected Response Message Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Expected Response Code: 8001 ||   Actual Response Code: 8001</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Response Code matched with expected Response Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Actual Request.ID from Response: 3f8565d7-50a2-437e-9ad5-8bab567c1d5a</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Request.ID is populated successfully and it's not Null</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_003 - With Null API Key</span>
+						<span class='test-time'>Jan 24, 2022 02:54:09 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:09 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:09 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+469ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/promotions?apikey=</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: GET</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Expected Status Code: 403 ||   Actual Status Code from API Call: 403</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Expected Response Message: invalid api key ||   Actual Response Message: invalid api key</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Response Message matched with expected Response Message Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Expected Response Code: 8001 ||   Actual Response Code: 8001</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Response Code matched with expected Response Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Actual Request.ID from Response: f57f3df6-9937-4ebc-85a0-73d56f3968fe</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>Request.ID is populated successfully and it's not Null</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_004 - Without API Key Parameter</span>
+						<span class='test-time'>Jan 24, 2022 02:54:09 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:09 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:10 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+495ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:09 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/promotions</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: GET</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Expected Status Code: 403 ||   Actual Status Code from API Call: 403</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Expected Response Message: invalid api key ||   Actual Response Message: invalid api key</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Response Message matched with expected Response Message Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Expected Response Code: 8001 ||   Actual Response Code: 8001</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Response Code matched with expected Response Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Actual Request.ID from Response: 0d7a1dcc-7201-41e9-b5a4-a246be2b8cd8</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Request.ID is populated successfully and it's not Null</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_005 - Invalid Endpoint</span>
+						<span class='test-time'>Jan 24, 2022 02:54:10 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:10 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:10 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+539ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/1?apikey=</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: GET</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Expected Status Code: 500 ||   Actual Status Code from API Call: 500</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Expected Response MessageID: HTTP 404 Not Found ||   Actual Response Message: HTTP 404 Not Found</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Response Message matched with expected Response Message Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Expected Response MessageID: 404 ||   Actual Response Message: 404</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>Response code matched with expected Response Code Successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_006 - Invalid API Method - POST</span>
+						<span class='test-time'>Jan 24, 2022 02:54:10 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:10 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:12 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+304ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:10 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/promotions?apikey=NA</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: POST</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Expected Status Code: 500 ||   Actual Status Code from API Call: 500</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Expected Response MessageID: HTTP 405 Method Not Allowed ||   Actual Response Message: HTTP 405 Method Not Allowed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Response Message matched with expected Response Message Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Expected Response MessageID: 405 ||   Actual Response Message: 405</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Response code matched with expected Response Code Successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_007 - Invalid API Method - PUT</span>
+						<span class='test-time'>Jan 24, 2022 02:54:12 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:12 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:12 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+496ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/promotions?apikey=NA</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: PUT</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Expected Status Code: 500 ||   Actual Status Code from API Call: 500</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Expected Response MessageID: HTTP 405 Method Not Allowed ||   Actual Response Message: HTTP 405 Method Not Allowed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Response Message matched with expected Response Message Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Expected Response MessageID: 405 ||   Actual Response Message: 405</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>Response code matched with expected Response Code Successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_008 - Invalid API Method - DELETE</span>
+						<span class='test-time'>Jan 24, 2022 02:54:12 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:12 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:13 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+518ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:12 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/promotions?apikey=NA</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: DELETE</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Expected Status Code: 500 ||   Actual Status Code from API Call: 500</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Expected Response MessageID: HTTP 405 Method Not Allowed ||   Actual Response Message: HTTP 405 Method Not Allowed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Response Message matched with expected Response Message Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Expected Response MessageID: 405 ||   Actual Response Message: 405</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Response code matched with expected Response Code Successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_MOVIEPROMOTIONS_009 - Invalid API Method - PATCH</span>
+						<span class='test-time'>Jan 24, 2022 02:54:13 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 24, 2022 02:54:13 AM</span>
+	<span class='label end-time'>Jan 24, 2022 02:54:13 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+509ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>http://api.intigral-ott.net/popcorn-api-rs-7.9.17/v1/promotions?apikey=NA</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>API Call is Successful with methodType: PATCH</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Expected Status Code: 500 ||   Actual Status Code from API Call: 500</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Status Code matched with expected Status Code Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Expected Response MessageID: HTTP 405 Method Not Allowed ||   Actual Response Message: HTTP 405 Method Not Allowed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Response Message matched with expected Response Message Successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Expected Response MessageID: 405 ||   Actual Response Message: 405</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:13 AM</td>
+					<td class='step-details'>Response code matched with expected Response Code Successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>9</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>182</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jan 24, 2022 02:54:02 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jan 24, 2022 02:54:13 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>11,071ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Host name</td>
+								<td>localhost</td>
+							</tr>
+							<tr>
+								<td>Environemnt</td>
+								<td>QA</td>
+							</tr>
+							<tr>
+								<td>user</td>
+								<td>Sathish</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 8,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				
+				passChild: 96,
+				failChild: 4,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 82,
+				exceptionsChild: 4,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
